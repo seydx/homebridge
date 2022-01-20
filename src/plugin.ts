@@ -190,6 +190,9 @@ major incompatibility issues and thus is considered bad practice. Please inform 
 
     // try to require() it and grab the exported initialization hook
     // eslint-disable-next-line @typescript-eslint/no-var-requires
+    
+    // pathToFileURL(specifier).href to turn a path into a "file url"
+    // see https://github.com/nodejs/node/issues/31710
 
     const pluginModules = this.isESM ? await _importDynamic(pathToFileURL(mainPath).href) : require(mainPath);
 
